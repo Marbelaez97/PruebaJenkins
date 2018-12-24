@@ -11,7 +11,7 @@ pipeline {
         }
         stage ('Configure') {
             steps {
-                bat' C:\\Oracle\\Middleware\\Oracle_Home\\oracle_common\\common\\bin\\wlst.cmd .\\config\\datasource.py .\\config\\datasources'
+                bat' C:\\Oracle\\Middleware\\Oracle_Home\\oracle_common\\common\\bin .\\config\\datasource.py .\\config\\datasources'
                 }
         }
         stage ('Deploy for testing') {
