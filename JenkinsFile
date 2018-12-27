@@ -11,19 +11,19 @@ pipeline {
         }
         stage ('Configure') {
             steps {
-                bat' C:\\Oracle\\Middleware\\Oracle_Home\\oracle_common\\common\\bin .\\config\\datasource.py .\\config\\datasources'
+                sh' C:\\Oracle\\Middleware\\Oracle_Home\\oracle_common\\common\\bin .\\config\\datasource.py .\\config\\datasources'
                 }
         }
         stage ('Deploy for testing') {
             steps {
-                bat'''
+                sh'''
                 mvn pre-integration-test -DoracleServerUrl=\"http://localhost:7101\" -DoracleUsername=\"weblogic\" -DoraclePassword=\"Mateo123\" -DoracleHome=\"D:/jdev/\"
                 '''
                 }
         }
         stage ('Test') {
             steps {
-                bat'mvn com.smartbear.soapui:soapui-maven-plugin:5.4.0:test' 
+                sh'mvn com.smartbear.soapui:soapui-maven-plugin:5.4.0:test' 
             }
             post {
                 always {
