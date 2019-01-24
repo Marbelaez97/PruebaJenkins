@@ -29,7 +29,7 @@
         <artifactId>soapui-maven-plugin</artifactId>
         <version>5.4.0</version>
 		    <configuration>
-            <projectFile>DBSelect-soapui-project</projectFile>
+            <projectFile>DBSelect-soapui-project.xml</projectFile>
 			      <junitReport>true</junitReport>
 			      <outputFolder>results</outputFolder>
             <projectProperties>
