@@ -13,5 +13,29 @@
         <module>System</module>
         <module>Test</module>
     </modules>
-
+	<build>
+    <plugins>
+    <plugin>
+        <groupId>com.smartbear.soapui</groupId>
+        <artifactId>soapui-maven-plugin</artifactId>
+        <version>5.4.0</version>
+		<configuration>
+            <skip>true</skip>
+        </configuration>   
+        <dependencies>
+            <dependency>
+                <groupId>com.smartbear.soapui</groupId>
+                <artifactId>soapui</artifactId>
+                <version>5.4.0</version>
+                <exclusions>
+                    <exclusion>  
+                        <groupId>com.smartbear.utils.analytics</groupId>
+                        <artifactId>out-app-analytics-provider</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies> 
+    </plugin>
+  </plugins>
+  </build>
 </project>
